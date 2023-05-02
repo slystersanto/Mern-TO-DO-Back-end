@@ -9,8 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.DB;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const DB = process.env.DB;
+const client = new MongoClient(DB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let todoCollection;
 
