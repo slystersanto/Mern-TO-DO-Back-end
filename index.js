@@ -26,6 +26,11 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
+
+app.get('/', (req, res) => {
+    res.send('Welcome to Deployment Practice Backend and Frontend Connectivity!');
+});
+
 app.get('/todos', async (req, res) => {
   const todos = await todoCollection.find().toArray();
   res.json(todos);
